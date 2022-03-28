@@ -5,7 +5,6 @@ const inquirer = require('inquirer');
 const questions = [];
 
 
-//  , Installation, Usage, License, Contributing, Tests, and Questions
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -43,28 +42,75 @@ const promptUser = () => {
       message: 'Would you like to add a Table of Contents?',
       default: true
     },
+    // {
+    //   type: 'input',
+    //   name: 'tableOfContents',
+    //   message: 'Provide your Table of Contents:',
+    //   when: ({ confirmTableOfContents }) => {
+    //     if (confirmTableOfContents) {
+    //       return true;
+    //     } else {
+    //       return false;
+    //     }
+    //   }
+    // }
+    {
+      // Installation section prompt
+      type: 'confirm',
+      name: 'confirmInstallation',
+      message: 'Would you like to add an Installation section?',
+      default: true
+    },
     {
       type: 'input',
-      name: 'tableOfContents',
-      message: 'Provide your Table of Contents:',
-      when: ({ confirmTableOfContents }) => {
-        if (confirmTableOfContents) {
+      name: 'installation',
+      message: 'Provide your Installation instructions:',
+      when: ({ confirmInstallation }) => {
+        if (confirmInstallation) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    {
+      // Usage section prompt
+      type: 'confirm',
+      name: 'confirmUsage',
+      message: 'Would you like to include Usage instructions?',
+      default: true
+    },
+    {
+      type: 'input',
+      name: 'usage',
+      message: 'Provide your Usage instructions:',
+      when: ({ confirmUsage }) => {
+        if (confirmUsage) {
           return true;
         } else {
           return false;
         }
       }
     }
+
+
+    // License - list of options
+    // Contributing
+    // Tests
+    // Questions - user name, github profile email address
+
+
+
   ]);
 };
 
 
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() { }
 
 // Function call to initialize app
 init();
