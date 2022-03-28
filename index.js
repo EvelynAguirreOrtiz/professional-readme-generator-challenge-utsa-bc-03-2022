@@ -6,6 +6,7 @@ const questions = [];
 
 
 const promptUser = () => {
+
   return inquirer.prompt([
     {
       // title of project
@@ -42,18 +43,6 @@ const promptUser = () => {
       message: 'Would you like to add a Table of Contents?',
       default: true
     },
-    // {
-    //   type: 'input',
-    //   name: 'tableOfContents',
-    //   message: 'Provide your Table of Contents:',
-    //   when: ({ confirmTableOfContents }) => {
-    //     if (confirmTableOfContents) {
-    //       return true;
-    //     } else {
-    //       return false;
-    //     }
-    //   }
-    // }
     {
       // Installation section prompt
       type: 'confirm',
@@ -91,20 +80,89 @@ const promptUser = () => {
           return false;
         }
       }
-    }
-
-
-    // License - list of options
-    // Contributing
-    // Tests
-    // Questions - user name, github profile email address
-
-
-
+    },
+    {
+      // license information
+      type: 'checkbox',
+      name: 'licenses',
+      message: 'Which licenses did you need for this project? (Check all that apply)',
+      choices: ['MIT','Apache', 'HTML', 'CSS', 'ES6', 'jQuery', 'Bootstrap', 'Node']
+    
+      Apache requires Apache License 2.0
+      Cloud Native Computing Foundation dictates Apache License 2.0 by default
+      GNU recommends GNU GPLv3 for most programs
+      npm packages overwhelmingly use the MIT or the very similar ISC licenses
+      OpenBSD prefers the ISC License
+      Rust crates are overwhelmingly licensed under both MIT and Apache License 2.0
+      WordPress plugins and themes must be GNU GPLv2 (or later)
+    
+    },
+    {
+      // Contributing section prompt
+      type: 'confirm',
+      name: 'confirmContribute',
+      message: 'Would you like to include a Contribute section?',
+      default: true
+    },
+    {
+      type: 'input',
+      name: 'contribute',
+      message: 'Provide your Contribute information:',
+      when: ({ confirmContribute }) => {
+        if (confirmContribute) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    },
+    // Questions section  email address
+    {
+      // add GitHub user name
+      type: 'input',
+      name: 'github',
+      message: 'Enter your GitHub Username (Required)',
+      validate: userNameInput => {
+        if (userNameInput) {
+          return true;
+        } else {
+          console.log('Please enter your user name!');
+          return false;
+        }
+      }
+    },
+    {
+      // add GitHub link
+      type: 'input',
+      name: 'link',
+      message: 'Enter the GitHub link to your project. (Required)',
+      validate: linkInput => {
+        if (linkInput) {
+          return true;
+        } else {
+          console.log('Please enter your GitHub link!');
+          return false;
+        }
+      }
+    },
+    {
+      // add email
+      type: 'input',
+      name: 'email',
+      message: 'Enter you email address. (Required)',
+      validate: emailInput => {
+        if (emailInput) {
+          return true;
+        } else {
+          console.log('Please enter your email address!');
+          return false;
+        }
+      }
+    },
   ]);
 };
 
-
+promptUser().then(answers => console.log(answers));
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) { }
