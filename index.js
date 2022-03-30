@@ -155,7 +155,6 @@ const questions = [
     }
   },
 ];
-
 inquirer.prompt(questions).then((resp) => {
   console.log(resp);
   // console.log(`Name: ${resp.yourName}`);
@@ -164,6 +163,22 @@ inquirer.prompt(questions).then((resp) => {
   // TODO: Create a function to write README file
   function writeToFile(fileName, data) {
     require('./utils/generateMarkdown.js');
+
+    fs.copyFile('./src/style.css', './dist/style.css', err => {
+      if (err) {
+        reject(err);
+        return;
+      }
+
+      resolve({
+        ok: true,
+        message: 'README created!'
+      });
+    });
+
+
+
+    
   }
 
   // TODO: Create a function to initialize app
