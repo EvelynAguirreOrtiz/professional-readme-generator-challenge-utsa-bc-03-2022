@@ -164,6 +164,7 @@ inquirer.prompt(questions).then((resp) => {
   function writeToFile(fileName, data) {
     require('./utils/generateMarkdown.js');
 
+    // need to find correct syntax
     fs.copyFile('./src/style.css', './dist/style.css', err => {
       if (err) {
         reject(err);
