@@ -1,9 +1,14 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const fs = require('fs');
+// where does this go?
+const generateMarkdown = require('./utils/generateMarkdown');
+
+
 
 // TODO: Create an array of questions for user input
 const questions = [
-{
+  {
     // title of project
     type: 'input',
     name: 'title',
@@ -79,7 +84,7 @@ const questions = [
   {
     // license information
     type: 'checkbox',
-    name: 'licenses',
+    name: 'license',
     message: 'Which licenses did you need for this project? (Check all that apply)',
     choices: ['MIT', 'ISC', 'Apache', 'Cloud Native Computing', 'GNU']
 
@@ -155,37 +160,23 @@ const questions = [
     }
   },
 ];
-inquirer.prompt(questions).then((resp) => {
-  console.log(resp);
+// inquirer.prompt(questions).then((resp) => {
+  // console.log(resp);
   // console.log(`Name: ${resp.yourName}`);
-});
+// });
 
-  // TODO: Create a function to write README file
-  function writeToFile(fileName, data) {
-    require('./utils/generateMarkdown.js');
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
 
-    // need to find correct syntax
-    fs.copyFile('./src/style.css', './dist/style.css', err => {
-      if (err) {
-        reject(err);
-        return;
-      }
+  fs.appendFile('README.md', './utils/generateMarkdown.js', err =>
+    err ? console.error(err) : console.log('README created!')
+  );
+}
 
-      resolve({
-        ok: true,
-        message: 'README created!'
-      });
-    });
+// TODO: Create a function to initialize app
+function init() {
+  return inquirer.prompt(questions)
+}
 
-
-
-    
-  }
-
-  // TODO: Create a function to initialize app
-  function init() {
-
-  }
-
-  // Function call to initialize app
-  init();
+// Function call to initialize app
+init();
