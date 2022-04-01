@@ -21,7 +21,6 @@ function renderLicenseLink(license) {
   }
 
 
-
 }
 
 // TODO: Create a function that returns the license section of README
@@ -48,7 +47,6 @@ function generateMarkdown(data) {
   ${data.description}
 
   ## Table of Contents
-  // add links to these
   - [Project Title](##project-title)
   - [Description](##description)
   - [Table of Contents](##table-of-contents)
@@ -70,10 +68,9 @@ function generateMarkdown(data) {
   [GitHub](https://.com/${data.github})
 
   <a href="${data.link}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
-(${data.link})
+  (${data.link})
  - Please send requests for additional information to:
- <${data.email}>
-
+  <${data.email}>
 `;
 }
 

@@ -4,8 +4,6 @@ const fs = require('fs');
 // where does this go?
 const generateMarkdown = require('./utils/generateMarkdown');
 
-
-
 // TODO: Create an array of questions for user input
 const questions = [
   {
@@ -161,22 +159,29 @@ const questions = [
   },
 ];
 // inquirer.prompt(questions).then((resp) => {
-  // console.log(resp);
-  // console.log(`Name: ${resp.yourName}`);
+// console.log(resp);
+// console.log(`Name: ${resp.yourName}`);
 // });
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
-  fs.appendFile('README.md', './utils/generateMarkdown.js', err =>
-    err ? console.error(err) : console.log('README created!')
-  );
+  return new Promise((resolve, reject) => {
+    fs.writeFile('README.md', './utils/generateMarkdown', err =>
+      err ? console.error(err) : console.log('README created!')
+    );
+
+  });
+
 }
+// writeToFile();
 
 // TODO: Create a function to initialize app
 function init() {
-  return inquirer.prompt(questions)
+  inquirer.prompt(questions).then((data) => {
+    return writeToFile();
+    // console.log(`Name: ${resp.yourName}`);
+  });
 }
-
 // Function call to initialize app
 init();
