@@ -8,19 +8,19 @@ function renderLicenseBadge(license) {
   }
 
   return `
-  # Project Title
+  # ${data.title}
   ${data.license}
 `;
 }
 
-// TODO: Create a function that returns the license link
+// TODO: Create a function that returns the license link 
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (!license) {
     return '';
   }
 
-
+// url:
 }
 
 // TODO: Create a function that returns the license section of README
@@ -40,6 +40,9 @@ function renderLicenseSection(license) {
 // TODO: Create a function to generate markdown for README
 
 function generateMarkdown(data) {
+
+  const { title, description, ...email } = data;
+ 
   return `
   # ${data.title}
   ![GitHub](${data.license})
@@ -47,20 +50,21 @@ function generateMarkdown(data) {
   ${data.description}
 
   ## Table of Contents
-  - [Project Title](##project-title)
-  - [Description](##description)
-  - [Table of Contents](##table-of-contents)
-  - [Installation](##installation)
-  - [Usage](##usage)
-  - [License](##license)
-  - [Contribute](##contribute)
+  - [Project Title](#project-title)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contribute](#contribute)
   
-  ##Installation
+  ## Installation
   ${data.installation}
-  ##Usage
+  
+  ## Usage
   ${data.usage}
   ## License
-
+ 
   ## Contribute
   ${data.contribute}
   ## Questions
@@ -75,3 +79,4 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
+
