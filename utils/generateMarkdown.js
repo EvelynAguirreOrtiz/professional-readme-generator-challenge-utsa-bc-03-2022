@@ -3,12 +3,13 @@
 
 // badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
 function renderLicenseBadge(license) {
+  const { title, description, ...email } = data;
+
   if (!license) {
     return '';
   }
 
   return `
-  # ${data.title}
   ${data.license}
 `;
 }
@@ -20,7 +21,9 @@ function renderLicenseLink(license) {
     return '';
   }
 
-// url:
+  return `
+  ${data.license}
+  `;
 }
 
 // TODO: Create a function that returns the license section of README
@@ -34,8 +37,8 @@ function renderLicenseSection(license) {
     ## License
     ${data.license}
 `;
-
 }
+
 
 // TODO: Create a function to generate markdown for README
 
@@ -45,35 +48,40 @@ function generateMarkdown(data) {
  
   return `
   # ${data.title}
-  ![GitHub](${data.license})
+
+  ##  renderLicenseBadge
+
   ## Description
   ${data.description}
 
   ## Table of Contents
-  - [Project Title](#project-title)
+  - [Project Title](# (#${data.title}))
   - [Description](#description)
-  - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
   - [Contribute](#contribute)
   
   ## Installation
-  ${data.installation}
+  ${data.install}
   
   ## Usage
   ${data.usage}
-  ## License
- 
+
+  ## renderLicenseSection
+
   ## Contribute
   ${data.contribute}
+
   ## Questions
 
-  [GitHub](https://.com/${data.github})
+  GitHub:
+  <https://github.com/${data.github}>
 
-  <a href="${data.link}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
-  (${data.link})
- - Please send requests for additional information to:
+  Project URL:
+  <${data.link}>
+
+  Please send requests for additional information to:
   <${data.email}>
 `;
 }

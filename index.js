@@ -38,7 +38,7 @@ const questions = [
     type: 'confirm',
     name: 'confirmTOC',
     message: 'Would you like to add a Table of Contents?',
-    default: true
+    default: false
   },
   {
     // Installation section prompt
@@ -95,24 +95,26 @@ const questions = [
 
   },
   {
-    // Contributing section prompt
     type: 'confirm',
     name: 'confirmContribute',
     message: 'Would you like to include a Contribute section?',
     default: true
   },
-  {
-    type: 'input',
-    name: 'contribute',
-    message: 'Provide your Contribute information:',
-    when: ({ confirmContribute }) => {
-      if (confirmContribute) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  },
+
+  // {
+  //   type: 'input',
+  //   name: 'contribute',
+  //   message: 'Provide your Contribute information:',
+  //   when: ({ confirmContribute }) => {
+  //     if (confirmContribute) {
+  //       return true;
+  //     } else {
+  //       return false;
+  //     }
+  //   }
+  // },
+
+
   // Questions section
   {
     // add GitHub user name
@@ -157,26 +159,16 @@ const questions = [
     }
   },
 ];
-// inquirer.prompt(questions).then((resp) => {
-// console.log(resp);
-// console.log(`Name: ${resp.yourName}`);
-// });
 
 // TODO: Create a function to write README file
 function writeToFile(data) {
 
-  // return new Promise((resolve, reject) => {
-    // fs.writeFile('README.md', './utils/generateMarkdown', err =>
+  fs.writeFile('README.md', generateMarkdown(data), err =>
 
-    fs.writeFile('README.md', generateMarkdown(data), err =>
-
-      err ? console.error(err) : console.log('README created!')
-    );
-
-  // });
+    err ? console.error(err) : console.log('README created!')
+  );
 
 }
-// writeToFile();
 
 // TODO: Create a function to initialize app                                                         
 function init() {
