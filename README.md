@@ -1,15 +1,15 @@
 
-  # title
+  # check 6
   
   
-  ![ISC](https://img.shields.io/badge/License-ISC-blue.svg)
+  ![Mozilla](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)
   
 
   ## Description
   n
 
   ## Table of Contents
-  - [Project Title](# (#title))
+  - [Project Title](# (#check 6))
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -22,11 +22,9 @@
   ## Usage
   undefined
 
-  
   ## License
-
   
-  This application is covered under [ISC License (ISC)](https://opensource.org/licenses/ISC)
+  This application is covered under [Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)
     
   
   ## Contribute

@@ -38,7 +38,7 @@ const questions = [
     type: 'confirm',
     name: 'confirmTOC',
     message: 'Would you like to add a Table of Contents?',
-    default: false
+    default: true
   },
   {
     // Installation section prompt
@@ -82,7 +82,7 @@ const questions = [
     // license information
     type: 'checkbox',
     name: 'license',
-    message: 'Which licenses did you need for this project? (Check all that apply)',
+    message: 'Which license did you need for this project?',
     choices: ['MIT', 'Apache', 'Eclipse', 'GNU', 'ISC', 'Mozilla']
 
   },

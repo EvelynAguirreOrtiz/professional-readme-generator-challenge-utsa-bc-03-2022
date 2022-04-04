@@ -12,23 +12,23 @@ function renderLicenseBadge(license) {
     return `
   ![${license}](https://img.shields.io/badge/License-MIT-yellow.svg)
   `
-  }  if (license == 'Apache') {
+  } else if (license == 'Apache') {
     return `
   ![${license}](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
   `
-  }  if (license == 'Eclipse') {
+  } else if (license == 'Eclipse') {
     return `
   ![${license}](https://img.shields.io/badge/License-EPL_1.0-red.svg)
   `
-  }  if (license == 'GNU') {
+  } else if (license == 'GNU') {
     return `
   ![${license}](https://img.shields.io/badge/License-GPLv3-blue.svg)
   `
-  }  if (license == 'ISC') {
+  } else if (license == 'ISC') {
     return `
   ![${license}](https://img.shields.io/badge/License-ISC-blue.svg)
   `
-  }  if (license == 'Mozilla') {
+  } else if (license == 'Mozilla') {
     return `
   ![${license}](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)
   `
@@ -45,23 +45,23 @@ function renderLicenseLink(license) {
     return `
   This application is covered under [The MIT License](https://opensource.org/licenses/MIT) 
   `
-  }  if (license == 'Apache') {
+  } else if (license == 'Apache') {
     return `
   This application is covered under [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0)
     `
-  } if (license == 'Eclipse') {
+  } else if (license == 'Eclipse') {
     return `
   This application is covered under [Eclipse Public License 1.0](https://opensource.org/licenses/EPL-1.0)
     `
-  }  if (license == 'GNU') {
+  } else if (license == 'GNU') {
     return `
   This application is covered under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0) 
   `
-  }  if (license == 'ISC') {
+  } else if (license == 'ISC') {
     return `
   This application is covered under [ISC License (ISC)](https://opensource.org/licenses/ISC)
     `
-  }  if (license == 'Mozilla') {
+  } else if (license == 'Mozilla') {
     return `
   This application is covered under [Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)
     `
@@ -73,11 +73,9 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (!license) {
     return '';
-  }
-
-  return `
-  ## License
-`;
+  } else {
+    return `## License`
+  };
 }
 
 // TODO: Create a function to generate markdown for README
@@ -126,5 +124,4 @@ function generateMarkdown(data) {
   <${data.email}>
 `;
 }
-
 module.exports = generateMarkdown;
