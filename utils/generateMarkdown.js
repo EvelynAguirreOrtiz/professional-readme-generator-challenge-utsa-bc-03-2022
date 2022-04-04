@@ -3,27 +3,69 @@
 
 // badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
 function renderLicenseBadge(license) {
-  const { title, description, ...email } = data;
+  // const { title, description, ...email } = data;
 
   if (!license) {
     return '';
-  }
 
-  return `
-  ${data.license}
-`;
-}
+  } else if (license == 'MIT') {
+    return `
+  ![${license}](https://img.shields.io/badge/License-MIT-yellow.svg)
+  `
+  }  if (license == 'Apache') {
+    return `
+  ![${license}](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
+  `
+  }  if (license == 'Eclipse') {
+    return `
+  ![${license}](https://img.shields.io/badge/License-EPL_1.0-red.svg)
+  `
+  }  if (license == 'GNU') {
+    return `
+  ![${license}](https://img.shields.io/badge/License-GPLv3-blue.svg)
+  `
+  }  if (license == 'ISC') {
+    return `
+  ![${license}](https://img.shields.io/badge/License-ISC-blue.svg)
+  `
+  }  if (license == 'Mozilla') {
+    return `
+  ![${license}](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)
+  `
+  }
+};
 
 // TODO: Create a function that returns the license link 
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (!license) {
     return '';
-  }
 
-  return `
-  ${data.license}
-  `;
+  } else if (license == 'MIT') {
+    return `
+  This application is covered under [The MIT License](https://opensource.org/licenses/MIT) 
+  `
+  }  if (license == 'Apache') {
+    return `
+  This application is covered under [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0)
+    `
+  } if (license == 'Eclipse') {
+    return `
+  This application is covered under [Eclipse Public License 1.0](https://opensource.org/licenses/EPL-1.0)
+    `
+  }  if (license == 'GNU') {
+    return `
+  This application is covered under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0) 
+  `
+  }  if (license == 'ISC') {
+    return `
+  This application is covered under [ISC License (ISC)](https://opensource.org/licenses/ISC)
+    `
+  }  if (license == 'Mozilla') {
+    return `
+  This application is covered under [Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)
+    `
+  }
 }
 
 // TODO: Create a function that returns the license section of README
@@ -34,22 +76,20 @@ function renderLicenseSection(license) {
   }
 
   return `
-    ## License
-    ${data.license}
+  ## License
 `;
 }
-
 
 // TODO: Create a function to generate markdown for README
 
 function generateMarkdown(data) {
 
   const { title, description, ...email } = data;
- 
+
   return `
   # ${data.title}
-
-  ##  renderLicenseBadge
+  
+  ${renderLicenseBadge(data.license)}
 
   ## Description
   ${data.description}
@@ -68,8 +108,9 @@ function generateMarkdown(data) {
   ## Usage
   ${data.usage}
 
-  ## renderLicenseSection
-
+  ${renderLicenseSection(data.license)}
+  ${renderLicenseLink(data.license)}
+  
   ## Contribute
   ${data.contribute}
 
@@ -87,4 +128,3 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
-

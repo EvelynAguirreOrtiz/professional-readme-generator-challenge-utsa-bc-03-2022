@@ -1,13 +1,15 @@
 
-  # restor
-
-  ##  renderLicenseBadge
+  # title
+  
+  
+  ![ISC](https://img.shields.io/badge/License-ISC-blue.svg)
+  
 
   ## Description
-  e
+  n
 
   ## Table of Contents
-  - [Project Title](# (#restor))
+  - [Project Title](# (#title))
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -20,8 +22,13 @@
   ## Usage
   undefined
 
-  ## renderLicenseSection
+  
+  ## License
 
+  
+  This application is covered under [ISC License (ISC)](https://opensource.org/licenses/ISC)
+    
+  
   ## Contribute
   undefined
 

@@ -83,15 +83,7 @@ const questions = [
     type: 'checkbox',
     name: 'license',
     message: 'Which licenses did you need for this project? (Check all that apply)',
-    choices: ['MIT', 'ISC', 'Apache', 'Cloud Native Computing', 'GNU']
-
-    // Apache requires Apache License 2.0
-    // Cloud Native Computing Foundation dictates Apache License 2.0 by default
-    // GNU recommends GNU GPLv3 for most programs
-    // npm packages overwhelmingly use the MIT or the very similar ISC licenses
-    // OpenBSD prefers the ISC License
-    // Rust crates are overwhelmingly licensed under both MIT and Apache License 2.0
-    // WordPress plugins and themes must be GNU GPLv2 (or later)
+    choices: ['MIT', 'Apache', 'Eclipse', 'GNU', 'ISC', 'Mozilla']
 
   },
   {
@@ -100,21 +92,18 @@ const questions = [
     message: 'Would you like to include a Contribute section?',
     default: true
   },
-
-  // {
-  //   type: 'input',
-  //   name: 'contribute',
-  //   message: 'Provide your Contribute information:',
-  //   when: ({ confirmContribute }) => {
-  //     if (confirmContribute) {
-  //       return true;
-  //     } else {
-  //       return false;
-  //     }
-  //   }
-  // },
-
-
+  {
+    type: 'input',
+    name: 'contribute',
+    message: 'Provide your Contribute information:',
+    when: ({ confirmContribute }) => {
+      if (confirmContribute) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
   // Questions section
   {
     // add GitHub user name
