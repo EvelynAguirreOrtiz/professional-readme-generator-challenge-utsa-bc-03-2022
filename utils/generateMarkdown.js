@@ -100,7 +100,7 @@ function generateMarkdown(data) {
   - [Contribute](#contribute)
   
   ## Installation
-  ${data.install}
+  ${data.installation}
   
   ## Usage
   ${data.usage}

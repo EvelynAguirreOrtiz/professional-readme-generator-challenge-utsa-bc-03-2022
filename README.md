@@ -6,9 +6,9 @@
   
 
   ## Description
-  A high-quality README is an important component any developer's open source project. This README generator is a useful tool that enables the user to quickly and efficiently create one. 
+  This is a command-line application that first prompts the user to enter information about their project, then generates a README.md file in their chosen repository. The README file will contain information About the project Title, Description, Installation instructions, Usage information, and Contribution guidelines, as well as links to the user's GitHub profile, project, and email. 
   
-  This is a command-line application that first prompts the user to enter information about their project, then generates a README.md file in their chosen repository. The README file will contain information About the project Title, Description, Installation instructions, Usage information, and Contribution guidelines, as well as links to the user's GitHub profile, project, and email address.
+  A high-quality README is an important component any developer's open source project. This README generator is a useful tool that enables the user to quickly and efficiently create one.
 
   ## Table of Contents
   - [Project Title](# (#Professional README Generator))
@@ -19,15 +19,18 @@
   - [Contribute](#contribute)
   
   ## Installation
-
   [Inquirer.js](https://www.npmjs.com/package/inquirer) is needed for the command line interface. 
-
-  The application will be invoked by using the following command: 
   
+  The application will be invoked by using the following command: 
+    ````
     node index.js
+    ````
   
   ## Usage
-  Here is an example of the app in use.
+  Here is an example of the app in use. 
+
+  
+  ![](./assets/images/README-generator-demo.gif)
 
   ## License
   
