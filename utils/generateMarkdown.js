@@ -1,7 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 
-// badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
 function renderLicenseBadge(license) {
   // const { title, description, ...email } = data;
 
@@ -43,27 +42,27 @@ function renderLicenseLink(license) {
 
   } else if (license == 'MIT') {
     return `
-  This application is covered under [The MIT License](https://opensource.org/licenses/MIT) 
+  This application is covered under [The MIT License](https://opensource.org/licenses/MIT). 
   `
   } else if (license == 'Apache') {
     return `
-  This application is covered under [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0)
+  This application is covered under [Apache 2.0 License](https://opensource.org/licenses/Apache-2.0).
     `
   } else if (license == 'Eclipse') {
     return `
-  This application is covered under [Eclipse Public License 1.0](https://opensource.org/licenses/EPL-1.0)
+  This application is covered under [Eclipse Public License 1.0](https://opensource.org/licenses/EPL-1.0).
     `
   } else if (license == 'GNU') {
     return `
-  This application is covered under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0) 
+  This application is covered under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0). 
   `
   } else if (license == 'ISC') {
     return `
-  This application is covered under [ISC License (ISC)](https://opensource.org/licenses/ISC)
+  This application is covered under [ISC License (ISC)](https://opensource.org/licenses/ISC).
     `
   } else if (license == 'Mozilla') {
     return `
-  This application is covered under [Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)
+  This application is covered under [Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0).
     `
   }
 }

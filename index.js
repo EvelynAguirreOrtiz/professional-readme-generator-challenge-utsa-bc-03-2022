@@ -84,7 +84,6 @@ const questions = [
     name: 'license',
     message: 'Which license did you need for this project?',
     choices: ['MIT', 'Apache', 'Eclipse', 'GNU', 'ISC', 'Mozilla']
-
   },
   {
     type: 'confirm',
@@ -148,15 +147,12 @@ const questions = [
     }
   },
 ];
-
 // TODO: Create a function to write README file
 function writeToFile(data) {
 
   fs.writeFile('README.md', generateMarkdown(data), err =>
-
     err ? console.error(err) : console.log('README created!')
   );
-
 }
 
 // TODO: Create a function to initialize app                                                         

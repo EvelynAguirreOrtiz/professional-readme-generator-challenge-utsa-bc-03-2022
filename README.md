@@ -1,15 +1,17 @@
 
-  # check 6
+  # Professional README Generator
   
   
-  ![Mozilla](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)
+  ![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
   
 
   ## Description
-  n
+  A high-quality README is an important component any developer's open source project. This README generator is a useful tool that enables the user to quickly and efficiently create one. 
+  
+  This is a command-line application that first prompts the user to enter information about their project, then generates a README.md file in their chosen repository. The README file will contain information About the project Title, Description, Installation instructions, Usage information, and Contribution guidelines, as well as links to the user's GitHub profile, project, and email address.
 
   ## Table of Contents
-  - [Project Title](# (#check 6))
+  - [Project Title](# (#Professional README Generator))
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
@@ -17,26 +19,31 @@
   - [Contribute](#contribute)
   
   ## Installation
-  undefined
+
+  [Inquirer.js](https://www.npmjs.com/package/inquirer) is needed for the command line interface. 
+
+  The application will be invoked by using the following command: 
+  
+    node index.js
   
   ## Usage
-  undefined
+  Here is an example of the app in use.
 
   ## License
   
-  This application is covered under [Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)
-    
+  This application is covered under [The MIT License](https://opensource.org/licenses/MIT). 
+  
   
   ## Contribute
-  undefined
+  This project has adopted the [Contributor Covenant](https://www.contributor-covenant.org/).
 
   ## Questions
 
   GitHub:
-  <https://github.com/n>
+  <https://github.com/EvelynAguirreOrtiz>
 
   Project URL:
-  <n>
+  <https://evelynaguirreortiz.github.io/professional-readme-generator-challenge-utsa-bc-03-2022/>
 
   Please send requests for additional information to:
-  <n>
+  <evelyn.aguirre.9895@gmail.com>
